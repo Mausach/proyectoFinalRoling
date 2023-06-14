@@ -70,7 +70,7 @@ export const RegisterScreen = () => {
   
   return (
     <div className="d-flex justify-content-center align-items-center customHeigth">
-	 <Form className='p-5 p-sm-4 bg-dark' onSubmit={onSubmit}> 
+	 <Form className='p-5 p-sm-4 bg-dark rounded' onSubmit={onSubmit}> 
    {error ? <p className='bg-danger w-100 text-center p-4 text-white fs-5'>{errorMsg}</p>:''}
 			<h2 className='text-white'>Register</h2>
 
