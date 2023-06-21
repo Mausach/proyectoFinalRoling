@@ -4,6 +4,8 @@ import { LoginScreen } from '../auth/pages/LoginScreen'
 import { RegisterScreen } from '../auth/pages/RegisterScreen'
 import { HomePage } from '../home/homepage/HomePage'
 import { AdminPage } from '../Admin/AdminPage/AdminPage'
+import { ReestablecerScreen } from '../auth/pages/ReestablecerScreen'
+import { TiendaScreen } from '../auth/pages/TiendaScreen'
 
 
 
@@ -19,6 +21,8 @@ export const AppRouter = () => {
       <Route path="/register" element={<RegisterScreen/>} />
       <Route path="/home" element={<HomePage/>} />
       <Route path="/admin" element={<AdminPage/>} />
+      <Route path="/restablecer" element={<ReestablecerScreen/>} />
+      <Route path="/tienda" element={<TiendaScreen/>} />
       
     </Routes>
 

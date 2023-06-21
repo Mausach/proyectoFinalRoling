@@ -4,11 +4,21 @@ import Form from 'react-bootstrap/Form';
 import authApi from '../../api/authApi';
 import swal from 'sweetalert';
 import { Link, useNavigate } from 'react-router-dom';
+
 import Modal from 'react-modal';
 import emailjs from 'emailjs-com';
+import { Spinner } from 'react-bootstrap';
 
 
 export const LoginScreen = () => {
+
+  //para animaciion de carga al principio de cada screen
+  const [loading,setLoading]=useState(true);
+  setTimeout(()=>{
+      setLoading(false);
+  },2000);
+//fin de animacion cargando
+
 
   const [isModalOpen,setIsModalOpen]=useState(false);
 
@@ -21,8 +31,8 @@ export const LoginScreen = () => {
     password:"",
   });
 
-  const [error,setError]=useState(false);
-  const [errorMsg,setErrorMsg]=useState('');
+  
+
   const navigate=useNavigate();
 
   const onInputChange=(e)=>{
@@ -39,12 +49,11 @@ export const LoginScreen = () => {
     if( 
     user.email.trim()==="" ||  
     user.password.trim()===""){
-      setError(true);
-      return setErrorMsg("todos los campos son obligatorios");
+      swal("ERROR", "todos los campos son obligatorios" , "error");
+      }else{
+        starLogin(user.email,user.password);
+      }
       
-    }
-      setError(false);
-      starLogin(user.email,user.password);
       
       
     }
@@ -57,16 +66,15 @@ export const LoginScreen = () => {
       });
     
       if( resp.data.rol === 'usuario'){
-        navigate("/home");
+        navigate('/home',{ state: resp.data.email });
       }else{
-        navigate("/admin");
+        navigate("/admin",{ state: resp.data.name });
       }
       
 
     } catch (error) {
-      console.log(error.response.data.msg);
-      setError(true);
-      setErrorMsg(error.response.data.msg);
+      
+      swal("ERROR" ,error.response.data.msg, "error");
     }
   }
 
@@ -83,21 +91,19 @@ export const LoginScreen = () => {
     e.preventDefault();
   
     if(Usemail.email.trim()===""){
-      setError(true);
-      return setErrorMsg("debe ingresar su correo electronico");
+
+      swal("ERROR" ,"Debe ingresar su correo electronico", "error");
       
-    }
-      setError(false);
+    }else{
       enviarCorreo(Usemail.email)
-
-      
+    }
       
     }
 
-    function abrirModal() {
-      setIsModalOpen(true);
-  
-}
+
+  function abrirModal() {
+   setIsModalOpen(true);
+  }
 
 
   const enviarCorreo = async (email) => {
@@ -119,7 +125,8 @@ export const LoginScreen = () => {
           from_name: 'EL Buen Comer devs',//mensaje de
           user_name: dest,//para el destinatario
           destinatario:dest,//email del destinatario
-          message:'despues para probar iria el ipervinculo a la parte donde actualizo una passwword',//mensaje
+          message:'Si decea restablecer su contraseña por favor...',//mensaje
+          
       };
        
       emailjs.send(serv_id, temp_id, templateParams, public_k)
@@ -139,28 +146,37 @@ export const LoginScreen = () => {
       
     } catch (error) {
       console.log(error.response.data.msg)
-      setError(true);
-      setErrorMsg(error.response.data.msg);
-
-      
+      swal("ERROR" ,error.response.data.msg, "error");
     }
 
-  }
-  
 
-    
-	return (
+  }
+
+  //condicional para la animacion de cargando
+  if(loading){
+    return(
+        <div className="d-flex align-items-center justify-content-center customHeigth">
+            <Spinner animation="border" role="status" variant="light"/>
+            <span className="visually-hidden">Loading...</span>
+        </div>
+
+        
+    )
+
+  }else{
+  
+    return (
 		<div className="d-flex align-items-center justify-content-center customHeigth">
-	 <Form className='p-5 p-sm-4 bg-dark rounded text-center' onSubmit={onSubmit}> 
-   {error ? <p className='bg-danger w-100 text-center p-4 text-white fs-5'>{errorMsg}</p>:''}
+	 <Form className='p-5 p-sm-4 bg-dark rounded text-center border border-white' onSubmit={onSubmit}> 
+   
 			<h1 className='text-warning'>
-      <i class="bi bi-person-circle"> </i>
+      <i className="bi bi-person-circle"> </i>
       Login
       </h1>
       
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-white'>
-        <i class="bi bi-person-fill"> </i> 
+        <i className="bi bi-person-fill"> </i> 
           Correo Electronico</Form.Label>
         <Form.Control type="email" name='email' placeholder="Introduce el email" maxLength={30} value={user.email} onChange={onInputChange}/>
         
@@ -169,7 +185,7 @@ export const LoginScreen = () => {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label className='text-white'>
-        <i class="bi bi-lock-fill"> </i>
+        <i className="bi bi-lock-fill"> </i>
           Contraseña</Form.Label>
         <Form.Control type="password" name='password' placeholder="Introduce la contraseña" minLength={5} maxLength={20} value={user.password} onChange={onInputChange} />
       </Form.Group>
@@ -196,7 +212,7 @@ export const LoginScreen = () => {
         <Link to={"https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&dsh=S1174787129%3A1658336401889979&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp"}>
           <Button variant="danger"  className="mb-3">
            <h4>
-             <i class="bi bi-google"> </i>
+             <i className="bi bi-google"> </i>
               Iniciá sesión con Google
            </h4>
           </Button> 
@@ -207,28 +223,21 @@ export const LoginScreen = () => {
         <Link to={"https://es-la.facebook.com/r.php?locale=es_LA&display=page"}>
           <Button variant="danger"  className="mb-3">
             <h4>
-              <i class="bi bi-facebook"> </i>
+              <i className="bi bi-facebook"> </i>
               Iniciá sesión con Facebook
             </h4>
           </Button>  
         </Link>
             
       </Form.Group>
-
-
-      
-
-      
-
-      
     </Form>
 
 
     <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}
-      className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5'>
+      className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5 border border-white'>
 				
 				<Form className='p-5 p-sm-4 bg-dark rounded' onSubmit={onSubmitUsEmail}>
-				{error ? <p className='bg-danger w-100 text-center p-4 text-white fs-5'>{errorMsg}</p>:''}
+				
         			<h1>Olvidaste tu contraseña?</h1>
 
               <h4 className='text-muted'> escribe tu direcciond e correo , te enviaremos un email para poder restablecerla muchas gracias</h4>
@@ -260,4 +269,5 @@ export const LoginScreen = () => {
 			</Modal>
 		</div>
 	);
+}
 }
