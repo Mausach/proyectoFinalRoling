@@ -17,9 +17,11 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
     <Routes>
+      <Route path="/*" element={<HomePage/>} />
+
       <Route path="/login" element={<LoginScreen/>} />
       <Route path="/register" element={<RegisterScreen/>} />
-      <Route path="/home" element={<HomePage/>} />
+      
       <Route path="/admin" element={<AdminPage/>} />
       <Route path="/restablecer" element={<ReestablecerScreen/>} />
       <Route path="/tienda" element={<TiendaScreen/>} />

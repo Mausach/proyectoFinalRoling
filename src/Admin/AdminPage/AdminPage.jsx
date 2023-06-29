@@ -522,9 +522,6 @@ const handleSelectChange = (e) => {
 
 const CargarTabla=()=>{
 
-	
-
-
 	if(opcionSeleccionada==="usuario"){
 
 		//condicional para la animacion de cargando
@@ -824,7 +821,7 @@ const CargarTabla=()=>{
 								type="text"
 								name="categoria"
 								className="w-60"
-				  maxLength={10}
+				  maxLength={15}
 				  onChange={onChangeForm}
 								
 							/>
@@ -932,7 +929,7 @@ const CargarTabla=()=>{
 								type="text"
 								name="categoria"
 								className="w-60"
-				  maxLength={10}
+				  maxLength={15}
 				  value={productoEditar.categoria}
 				  onChange={onChangeFormEditar}
 								
