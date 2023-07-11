@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { LoginScreen } from '../auth/pages/LoginScreen'
-import { RegisterScreen } from '../auth/pages/RegisterScreen'
-import { HomePage } from '../home/homepage/HomePage'
-import { AdminPage } from '../Admin/AdminPage/AdminPage'
-import { ReestablecerScreen } from '../auth/pages/ReestablecerScreen'
-import { TiendaScreen } from '../auth/pages/TiendaScreen'
+import { LoginScreen } from '../Pages/Login/LoginScreen'
+import { RegisterScreen } from '../Pages/Register/RegisterScreen'
+import { HomePage } from '../Pages/Home/HomePage'
+import { AdminPage } from '../Pages/Admin/AdminPage'
+import { ReestablecerScreen } from '../Pages/Restablecer/ReestablecerScreen'
+import { TiendaScreen } from '../Pages/Tienda/TiendaScreen'
+import { NosotrosPage } from '../Pages/Nosotros/NosotrosPage'
+import { NuestroEquipoPage } from '../Pages/Nosotros/NuestroEquipoPage'
 
 
 
@@ -16,18 +18,18 @@ import { TiendaScreen } from '../auth/pages/TiendaScreen'
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/*" element={<HomePage/>} />
+      <Routes>
 
-      <Route path="/login" element={<LoginScreen/>} />
-      <Route path="/register" element={<RegisterScreen/>} />
-      
-      <Route path="/admin" element={<AdminPage/>} />
-      <Route path="/restablecer" element={<ReestablecerScreen/>} />
-      <Route path="/tienda" element={<TiendaScreen/>} />
-      
-    </Routes>
+        <Route path="/*" element={<HomePage />} />
+        <Route path="/Nosotros" element={<NosotrosPage />} />
+        <Route path="/NuestroEquipo" element={<NuestroEquipoPage />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/register" element={<RegisterScreen />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/restablecer" element={<ReestablecerScreen />} />
+        <Route path="/tienda" element={<TiendaScreen />} />
 
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   )
 }
