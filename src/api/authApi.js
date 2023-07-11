@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const authApi=axios.create({
-    baseURL:"http://localhost:4001",   
+    baseURL:"elbuencomer.up.railway.app",   
 });
 
 //envia atraves del header la llave del token que previamente se guardo en el local storage
