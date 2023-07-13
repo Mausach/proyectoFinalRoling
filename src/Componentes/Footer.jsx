@@ -18,7 +18,7 @@ export const Footer = ({emailUs}) => {
   const ir_Restablecer = () => {
     navigate('/restablecer')
   }
-
+  
   const ir_Register = () => {
     navigate('/register')
   }
