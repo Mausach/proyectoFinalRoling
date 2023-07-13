@@ -15,6 +15,10 @@ export const Footer = ({emailUs}) => {
     swal("Error 404", "Pagina destino no encontrada", "error");
   }
 
+  const ir_Restablecer = () => {
+    navigate('/restablecer')
+  }
+
   const ir_Register = () => {
     navigate('/register')
   }
@@ -96,7 +100,7 @@ export const Footer = ({emailUs}) => {
                 <li>
                   <h3>
                     <a href="" className='text-light'>
-                      <i className="bi bi-twitter" onClick={(e) => ir_404(e)}> </i>
+                      <i className="bi bi-twitter" onClick={ir_Restablecer}> </i>
                     </a>
                   </h3>
                 </li>
