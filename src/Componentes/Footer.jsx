@@ -100,7 +100,7 @@ export const Footer = ({emailUs}) => {
                 <li>
                   <h3>
                     <a href="" className='text-light'>
-                      <i className="bi bi-twitter" onClick={ir_Restablecer}> </i>
+                      <i className="bi bi-twitter" onClick={(e) => ir_404(e)}> </i>
                     </a>
                   </h3>
                 </li>
