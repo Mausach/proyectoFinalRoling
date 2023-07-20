@@ -68,9 +68,9 @@ export const AdminPage = () => {
 								className="rounded p-2 btn btn-danger m-2"
 								onClick={() => setIsModalOpenUs(true)}
 							>
-								<h4>
+								<h5>
 									<i className='bi bi-person-fill-add'> </i>Alta de Usuario
-								</h4>
+								</h5>
 
 
 							</button>
@@ -99,8 +99,8 @@ export const AdminPage = () => {
 								className="rounded p-2 btn btn-danger m-2"
 								onClick={() => setIsModalOpen(true)}
 							>
-								<h4><i class="bi bi-plus-circle-fill"> </i>
-									Alta de Menu</h4>
+								<h5><i class="bi bi-plus-circle-fill"> </i>
+									Alta de Menu</h5>
 							</button>
 						</div>
 
@@ -142,10 +142,10 @@ export const AdminPage = () => {
 	return (
 		<div>
 			<NavBar emailUs={datos}/>
-			<h1 className="text-center p-3 text-white">Bienvenido Admin: {datos}</h1>
+			<h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido Admin: {datos}</h1>
 			<div>
 				<div className=' d-flex justify-content-end me-5'>
-					<h1 className='text-warning'>Selección de tabla</h1>
+					<h1 className='text-white texto-con-sombras-multiples'>Opciones</h1>
 					<select value={opcionSeleccionada} onChange={handleSelectChange}
 						className='bg-warning rounded p-2 m-2'>
 						<option value="usuario">Tabla usuarios</option>

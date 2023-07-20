@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import swal from 'sweetalert';
 import { AlertaGuardarUs } from '../helpers/GuardarUsuario';
 
+
 export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate }) => {
 
   //estado para guardar los datos del Usuario desde la pagina de administracion
@@ -47,10 +48,18 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
     });
   };
 
+  const customModalStyles = {
+    content: {
+      maxWidth: '90%', // Establece el ancho máximo del modal
+      margin: 'auto', // Centra el modal horizontalmente
+    },
+  };
+
   return (
     <div>
       {/* Modal para agregar Usuarios */}
-      <Modal isOpen={isModalOpenUs} onRequestClose={() => setIsModalOpenUs(false)}
+
+      <Modal isOpen={isModalOpenUs} onRequestClose={() => setIsModalOpenUs(false)} style= {customModalStyles}
         className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5 border'>
 
         <Form className='p-5 p-sm-4 bg-dark rounded border border-white' onSubmit={onSubmitFormUs}>
@@ -99,10 +108,10 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
 
           <div className='d-grid mx-auto'>
             <Button type="submit" variant="danger" className="rounded btn btn-danger m-2 ">
-              <h5>
+              <h6>
                 <i className='bi bi-person-fill-add'> </i>
                 Guardar Usuario
-              </h5>
+              </h6>
             </Button>
           </div>
 

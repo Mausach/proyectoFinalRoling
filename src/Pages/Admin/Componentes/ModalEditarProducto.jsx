@@ -43,13 +43,15 @@ export const ModalEditarProducto = ({ isModalOpenEditar, setIsModalOpenEditar, p
     <div>
       {/* Modal de Editar */}
       <Modal isOpen={isModalOpenEditar}
-        onRequestClose={() => setIsModalOpenEditar(false)}
-        className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5'>
+        onRequestClose={() => setIsModalOpenEditar(false) }
+        className='text-white d-flex justify-content-center align-items-center mt-2 border'
+        >
 
-        <h2>Editar producto</h2>
-        <Form className='p-5 p-sm-4 bg-dark rounded border border-white' onSubmit={onSubmitFormEditar}>
-
-          <h2>Editar producto</h2>
+        <Form className='p-4 p-sm-4 bg-dark rounded border border-white' onSubmit={onSubmitFormEditar}>
+          
+          <h2 className='text-white'>
+          <i className='bi bi-pencil-square'> </i>
+            Editar producto</h2>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre</Form.Label>
             <Form.Control
@@ -132,11 +134,11 @@ export const ModalEditarProducto = ({ isModalOpenEditar, setIsModalOpenEditar, p
           </Form.Group>
 
           <div className='d-grid mx-auto'>
-            <Button type="submit" variant="danger" className="rounded btn btn-danger ms-3">
-              <h5>
-                <i className='bi bi-pencil-square'> </i>
+            <Button type="submit" variant="danger" className="rounded btn btn-danger">
+              <h6>
+                <i className='bi bi-save'> </i>
                 Guardar cambios
-              </h5>
+              </h6>
             </Button>
           </div>
 

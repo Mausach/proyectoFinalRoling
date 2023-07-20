@@ -49,12 +49,12 @@ export const FromularioLogin = () => {
 
     return (
         <div>
-            <Form className='p-5 p-sm-4 bg-dark rounded text-center border border-white' onSubmit={onSubmit}>
+            <Form className='p-5 p-sm-4 bg-dark rounded text-center border border-white m-3' onSubmit={onSubmit}>
 
-                <h1 className='text-warning'>
+                <h2 className='text-warning'>
                     <i className="bi bi-person-circle"> </i>
-                    Login
-                </h1>
+                    INICIAR SESIÒN
+                </h2>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='text-white'>
@@ -74,9 +74,9 @@ export const FromularioLogin = () => {
 
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className='text-white'>
+                    <Form.Label>
                         <h5>
-                            <a href="#" onClick={abrirModal}>¿Olvidaste tu contraseña?</a>
+                            <a href="#" className='text-white' onClick={abrirModal}>¿Olvidaste tu contraseña? Clic aquí</a>
                         </h5>
 
                     </Form.Label>
@@ -84,19 +84,19 @@ export const FromularioLogin = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Button variant="danger" type="submit" className="mb-3">
-                        <h5>
-                            Login
-                        </h5>
+                        <h6>
+                        Ingresar
+                        </h6>
                     </Button>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Link to={"https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&dsh=S1174787129%3A1658336401889979&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp"}>
                         <Button variant="danger" className="mb-3">
-                            <h4>
+                            <h6>
                                 <i className="bi bi-google"> </i>
                                 Iniciá sesión con Google
-                            </h4>
+                            </h6>
                         </Button>
                     </Link>
                 </Form.Group>
@@ -104,10 +104,10 @@ export const FromularioLogin = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Link to={"https://es-la.facebook.com/r.php?locale=es_LA&display=page"}>
                         <Button variant="danger" className="mb-3">
-                            <h4>
+                            <h6>
                                 <i className="bi bi-facebook"> </i>
                                 Iniciá sesión con Facebook
-                            </h4>
+                            </h6>
                         </Button>
                     </Link>
 

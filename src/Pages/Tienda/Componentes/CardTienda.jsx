@@ -16,6 +16,7 @@ export const CardTienda = ({ producto, carrito, setCarrito, cargarProductos, ema
                 <Card.Img variant="top" src={producto.url_img} />
                 <Card.Body>
                     <Card.Title>{producto.name}</Card.Title>
+                    <hr></hr>
                     <Card.Text>
                         {producto.detalle}
                     </Card.Text>
@@ -27,10 +28,10 @@ export const CardTienda = ({ producto, carrito, setCarrito, cargarProductos, ema
                     </Card.Text>
 
                     <Button variant="danger" className="mb-3" onClick={(e) => guardarDatosEnCarrito(producto._id, e, carrito, setCarrito, cargarProductos, emailUs, navigate)}>
-                        <h4>
+                        <h6>
                             <i className="bi bi-cart-plus"> </i>
-                            añadir al pedido
-                        </h4>
+                            Añadir al pedido
+                        </h6>
                     </Button>
                 </Card.Body>
             </Card>

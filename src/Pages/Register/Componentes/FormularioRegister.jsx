@@ -40,11 +40,11 @@ export const FormularioRegister = () => {
 
     return (
         <div>
-            <Form className='p-5 p-sm-4 bg-dark rounded text-center border border-white' onSubmit={onSubmit}>
+            <Form className='p-5 p-sm-4 bg-dark rounded text-center border border-white m-3' onSubmit={onSubmit}>
 
                 <h1 className='text-warning'>
                     <i className="bi bi-person-lines-fill"> </i>
-                    Registrarse
+                    CREAR CUENTA
                 </h1>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -77,7 +77,7 @@ export const FormularioRegister = () => {
                 </Form.Group>
 
                 <Button variant="danger" type="submit" >
-                    registrarse
+                    Registrarse
                 </Button>
 
             </Form>

@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../assets/img/Logo/El_Buen_Comer_PNG.png'
 import { useNavigate } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 export const NavBar = ({ emailUs, carritoDePedidos}) => {
 
@@ -61,24 +62,33 @@ export const NavBar = ({ emailUs, carritoDePedidos}) => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link className='text-light' onClick={ir_Home}>
-                <h2>
-                  <i className="bi bi-house-fill text-warning"> </i>
-                </h2>
+              <Nav.Link className='text-light'>
+                <Button className="m-2" variant="outline-light" onClick={ir_Home}>
+                      INICIO
+                    </Button>
 
               </Nav.Link>
-              <Nav.Link className='text-light' onClick={ir_tienda}>
-                <h4>
-                  Menu
-                </h4>
+
+              <Nav.Link className='text-light'>
+              <Button className="m-2" variant="outline-light" onClick={ir_tienda}>
+                      MENU
+                    </Button>
               </Nav.Link>
 
-              <h4>
-                <NavDropdown title="Quienes Somos" id='custom-drow'>
-                  <NavDropdown.Item onClick={ir_Nosotros}>Nosotros</NavDropdown.Item>
-                  <NavDropdown.Item onClick={ir_NuestroEquipo}>Nuestro Equipouipo</NavDropdown.Item>
-                </NavDropdown>
-              </h4>
+              <Nav.Link>
+            <Dropdown className="m-2">
+
+              <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
+              QUIENES SOMOS
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+              <NavDropdown.Item onClick={ir_Nosotros}>Nosotros</NavDropdown.Item>
+                  <NavDropdown.Item onClick={ir_NuestroEquipo}>Equipo de desarrollo</NavDropdown.Item>
+            </Dropdown.Menu>
+
+             </Dropdown>
+              </Nav.Link>
 
               <Nav.Link className='text-light'>
                 {carritoDePedidos}
@@ -97,10 +107,10 @@ export const NavBar = ({ emailUs, carritoDePedidos}) => {
                 ) : (
                   <>
                     <Button className="m-2" variant="outline-warning" onClick={ir_Login}>
-                      Login
+                      INICIAR SESIÒN
                     </Button>
                     <Button className="m-2" variant="outline-warning" onClick={ir_Register}>
-                      Registrate
+                      REGÌSTRARSE
                     </Button>
                   </>
                 )}

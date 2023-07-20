@@ -131,10 +131,10 @@ export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) 
           <div className='d-grid mx-auto'>
 
             <Button type="submit" variant="danger" className="d-flex rounded btn btn-danger m-2">
-              <h5>
+              <h6>
                 <i className='bi bi-plus-circle-fill'> </i>
                 Crgar Producto
-              </h5>
+              </h6>
             </Button>
 
           </div>

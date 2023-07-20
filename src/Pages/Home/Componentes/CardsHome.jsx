@@ -24,18 +24,20 @@ export const CardsHome = ({ cargarProductos, navigate, emailUs }) => {
                                     <Card.Img variant="top" src={producto.url_img} />
                                     <Card.Body>
                                         <Card.Title>{producto.name}</Card.Title>
+                                        <hr></hr>
                                         <Card.Text>
                                             {producto.detalle}
                                         </Card.Text>
+                                        
                                         <Card.Text>
                                             precio: ${producto.precio}
                                         </Card.Text>
 
-                                        <Button variant="danger" className="mb-3" onClick={ir_tienda}>
-                                            <h4>
+                                        <Button variant="danger" className="mb-2" onClick={ir_tienda}>
+                                            <h6>
                                                 <i className="bi bi-eye"> </i>
-                                                Ver Mas...
-                                            </h4>
+                                                Ver mas...
+                                            </h6>
                                         </Button>
 
                                     </Card.Body>

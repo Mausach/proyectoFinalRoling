@@ -153,11 +153,11 @@ export const TiendaScreen = () => {
             {/*debe ir en el navbar*/}
             <NavBar emailUs={emailUs} carritoDePedidos={<CarritoDePedidos carrito={carrito} setCarrito={setCarrito} cargarProductos={cargarProductos} setCargarProductos={setCargarProductos} emailUs={emailUs} navigate={navigate} />} />
 
-            <h1 className="text-center p-3 text-white">Bienvenido Al Menu: {emailUs}</h1>
+            <h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido Al Menu: {emailUs}</h1>
             <div>
 
-                <div className=' d-flex justify-content-end me-5'>
-                    <h1 className='text-white'>Selección de Menus</h1>
+                <div className=' d-flex justify-content-start ms-4'>
+                    <h1 className='text-white texto-con-sombras-multiples'> Menus</h1>
                     <select value={opcionSeleccionada} onChange={handleSelectChange}
                         className='bg-white rounded p-2 m-2'>
                         <option value="Todos">Todo el menu</option>

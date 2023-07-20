@@ -3,10 +3,15 @@ import { Spinner } from 'react-bootstrap';
 import { FormularioRegister } from './Componentes/FormularioRegister';
 import { NavBar } from '../../Componentes/NavBar';
 import { Footer } from '../../Componentes/Footer';
+import { useLocation } from 'react-router-dom';
 
 
 
 export const RegisterScreen = () => {
+
+  const location = useLocation();
+
+  const emailUs = location.state;//recibe el email del loguin
 
   //para animaciion de carga al principio de cada screen
   const [loading, setLoading] = useState(true);
@@ -26,11 +31,11 @@ export const RegisterScreen = () => {
   } else {
     return (
       <div>
-        <NavBar/>
+        <NavBar emailUs={emailUs}/>
         <div className="d-flex justify-content-center align-items-center customHeigth">
         <FormularioRegister />
       </div>
-      <Footer/>
+      <Footer emailUs={emailUs}/>
       </div>
       
     )

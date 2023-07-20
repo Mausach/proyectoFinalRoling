@@ -1,3 +1,9 @@
+/* En tu archivo CSS (styles.css) o en tus componentes estilizados (styled-components) */
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('../assets/fonts/JosefinSans-MediumItalic.ttf') format('truetype'); /* Ruta a tu archivo de fuente */
+}
+
 body{
     min-height: 100vh;
     background-image: url(/src/assets/img/bg/backgraund.jpg);
@@ -5,6 +11,7 @@ body{
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'JosefinSans', sans-serif;
 
     }
 
@@ -153,4 +160,5 @@ body{
     padding: 5px;
 }
   /*///////////////*/
+  
   

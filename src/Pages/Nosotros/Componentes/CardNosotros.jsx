@@ -7,8 +7,8 @@ import Logo from '../../../assets/img/Logo/El_Buen_Comer_PNG.png'
 export const CardNosotros = () => {
     return (
         <div>
-            <Card className="text-center mt-3 card text-white bg-dark">
-      <Card.Header>Para ustedes</Card.Header>
+            <Card className="text-center mt-3 card text-white bg-dark border border-white">
+      <Card.Header></Card.Header>
       <Card.Body>
       <div className='d-flex justify-content-center align-items-center p-5 p-sm-4 mt-2'>
             <img className="logo" style={{ width: '700px' }} src={Logo} alt="Logo"/>
@@ -19,7 +19,7 @@ export const CardNosotros = () => {
                 permitiendonos administrar los pedidos con envios a domicilio. Espero disfruten nuestros servicios
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted">Y vuelvan pronto </Card.Footer>
+      <Card.Footer className="text-muted"></Card.Footer>
     </Card>
         </div>
     )

@@ -15,9 +15,6 @@ export const Footer = ({emailUs}) => {
     swal("Error 404", "Pagina destino no encontrada", "error");
   }
 
-  const ir_Restablecer = () => {
-    navigate('/restablecer')
-  }
 
   const ir_Register = () => {
     navigate('/register')
@@ -31,49 +28,45 @@ export const Footer = ({emailUs}) => {
     <div>
       <footer className='p-3 rounded fondo_nav_footer mt-3 text-white'>
         <Container>
-          <div className='d-flex justify-content-center align-items-center p-5 p-sm-4 mt-2'>
+          <div className='d-flex justify-content-center align-items-center p-5 p-sm-4 mb-1'>
             <img className="logo" style={{ width: '250px' }} src={Logo} alt="Logo" onClick={ir_Home}/>
           </div>
 
           <Row className="justify-content-center">
             <Col lg='5' md='12' className='mb-4 mb-md-0'>
-              <h4 className='text-uppercase'>El Buen Comer</h4>
+              <h4 className='text-uppercase'>El BUEN COMER</h4>
 
-              <h5>
+              <p>
               Deléitate con nuestros platos
-              </h5>
-
-              <h5>
               en la comodidad de tu hogar
-              </h5>
+              </p>
+
+              <p>
+              <a href='#' className='text-white' onClick={ir_Register}>
+                      Registreate para aprovechar las promociones
+                    </a>
+              </p>
             </Col>
 
-            <Col lg='3' md='6' className='mb-4 mb-md-0 '>
+            <Col lg='3' md='6' className='mb-4 mb-md-0'>
               <h4 className='text-uppercase'>Metodos de Pagos:</h4>
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <h5>
-                    <i className="bi bi-cash text-success">  </i>En efectivo al momento de recibir tu pedido
-                  </h5>
+                  
+                     <i className="bi bi-cash text-success">  </i> En efectivo al momento de recibir tu pedido
+                  
 
                 </li>
                 <li>
-                  <h5>
+                  
                     <i className="bi bi-credit-card text-warning"> </i>Tarjeta de credito,debito y mercadopago
-                  </h5>
+                  
 
 
 
                 </li>
-                <li>
-                  <h5>
-                    <a href='#' className='text-white' onClick={ir_Register}>
-                      Registreate para aprovechar las promociones
-                    </a>
-                  </h5>
-
-                </li>
+                
               </ul>
             </Col>
 
@@ -81,8 +74,8 @@ export const Footer = ({emailUs}) => {
             <Col lg='3' md='6' className='mb-4 mb-md-0'>
               <h4 className='text-uppercase mb-0'>Nuestras Redes</h4>
 
-              <ul className='list-unstyled mt-3'>
-                <li>
+              <ul className='list-inline mt-3'>
+                <li className="list-inline-item m-3">
                   <h3>
                     <a href="" className='text-light'>
                       <i className="bi bi-instagram" onClick={(e) => ir_404(e)}> </i>
@@ -90,14 +83,14 @@ export const Footer = ({emailUs}) => {
                   </h3>
 
                 </li>
-                <li>
+                <li className="list-inline-item m-3">
                   <h3>
                     <a href="" className='text-light'>
                       <i className="bi bi-facebook" onClick={(e) => ir_404(e)}> </i>
                     </a>
                   </h3>
                 </li>
-                <li>
+                <li className="list-inline-item m-3">
                   <h3>
                     <a href="" className='text-light'>
                       <i className="bi bi-twitter" onClick={(e) => ir_404(e)}> </i>

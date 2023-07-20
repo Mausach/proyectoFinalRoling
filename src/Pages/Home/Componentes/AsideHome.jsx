@@ -21,9 +21,10 @@ export const AsideHome = () => {
                   src="https://media.istockphoto.com/id/477567550/es/foto/bebidas-helada.jpg?s=612x612&w=0&k=20&c=utvO5blVI8Ti37mn4vHsxxDo5ZvWlQO1RV6mh5e_Uvs="
                   alt="First slide"
                 />
-
-                <h4 className='text-dark border-light texto-con-sombras-multiples'>Disfruta de la Comida</h4>
-                <h5 className='text-dark border-light texto-con-sombras-multiples'>Preparada con los mas frescos ingredientes</h5>
+                <h4 className='text-dark border-light texto-con-sombras-multiples'>Aprovecha de nuestras promociones</h4>
+                <h5 className='text-dark border-light texto-con-sombras-multiples'>
+                  Disfruta de las mejores bebidas!!!
+                </h5>
 
               </Carousel.Item>
               <Carousel.Item>
@@ -32,9 +33,11 @@ export const AsideHome = () => {
                   src="https://comoinvestir.thecap.com.br/medias/2022/10/heineken-reduz-lucro-e-decepciona-em-receita-no-3t22.webp"
                   alt="Second slide"
                 />
+                <h4 className='text-dark border-light texto-con-sombras-multiples'>Aprovecha de nuestras promociones</h4>
+                <h5 className='text-dark border-light texto-con-sombras-multiples'>
+                  Disfruta de las mejores bebidas!!!
+                </h5>
 
-                <h4 className='text-dark border-light texto-con-sombras-multiples'>Dale sason a tu comida</h4>
-                <h5 className='text-dark border-light texto-con-sombras-multiples'>Con la gran dalidad de nuestra marca de condimentos</h5>
 
               </Carousel.Item>
               <Carousel.Item>
@@ -44,9 +47,9 @@ export const AsideHome = () => {
                   alt="Third slide"
                 />
 
-                <h4 className='text-dark border-light texto-con-sombras-multiples'>Muy pronto....</h4>
+                <h4 className='text-dark border-light texto-con-sombras-multiples'>Aprovecha de nuestras promociones</h4>
                 <h5 className='text-dark border-light texto-con-sombras-multiples'>
-                  Endulzaremos tu paladar con nuestra nueva seccion de masas finas y reposteria
+                  Disfruta de las mejores bebidas!!!
                 </h5>
 
               </Carousel.Item>
