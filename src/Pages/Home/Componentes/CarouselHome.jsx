@@ -25,7 +25,7 @@ export const CarouselHome = () => {
           />
           <Carousel.Caption>
             <h4 className='text-white border-light texto-con-sombras-multiples'>Dale sason a tu comida</h4>
-            <h5 className='text-white border-light texto-con-sombras-multiples'>Con la gran dalidad de nuestra marca de condimentos</h5>
+            <h5 className='text-white border-light texto-con-sombras-multiples'>Con la gran calidad de nuestra marca de condimentos</h5>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
