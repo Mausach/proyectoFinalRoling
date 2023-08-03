@@ -25,8 +25,10 @@ export const guardarDatosEnCarrito = (id, e, carrito, setCarrito, cargarProducto
       } else {
         // Si el producto no existe en el carrito, agregarlo con una cantidad de 1
         setCarrito((prevCarrito) => [...prevCarrito, { ...product, cantidad: 1 }]);
+        window.scrollTo({ top: 0, behavior: 'smooth' })//redirige al navbar para ver el carrito pedidos
       }
     }
+    
 
   } else {
 

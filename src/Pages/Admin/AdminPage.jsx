@@ -41,16 +41,13 @@ export const AdminPage = () => {
 	//metodo para inhabilitar usuario (recordatorio falta controlar que el usuario este activo)
 
 	const handleSelectChange = (e) => {
-
 		setOpcionSeleccionada(e.target.value);
-
-
 	};
 
 	const CargarTabla = () => {
 
 		if (opcionSeleccionada === "usuario") {
-			//condicional para la animacion de cargando
+			
 			if (loading) {
 				return (
 					<div className="d-flex align-items-center justify-content-center customHeigth">
@@ -81,7 +78,7 @@ export const AdminPage = () => {
 				);
 			}
 		} else if (opcionSeleccionada == "menus") {
-			//condicional para la animacion de cargando
+			
 			if (loading) {
 				return (
 					<div className="d-flex align-items-center justify-content-center customHeigth">
@@ -109,7 +106,7 @@ export const AdminPage = () => {
 				);
 			}
 		} else if (opcionSeleccionada == "pedidos") {
-			//condicional para la animacion de cargando
+			
 			if (loading) {
 				return (
 					<div className="d-flex align-items-center justify-content-center customHeigth">
@@ -126,22 +123,21 @@ export const AdminPage = () => {
 			}
 		}
 	}
-	//useEfect sirve de esta manera para que las tablas se carguen a penas entren al screen de admin
-	//si en corchete ponemos otra funcion ejemplo la de agregar hacemos que el cargar se ejecute cuando termine de agregar el usuario oproducto
+	
 	useEffect(() => {
 
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
 
-		cargarUser(setCargarUsuarios,navigate);
+		cargarUser(setCargarUsuarios, navigate);
 		cargarProductosDB(setCargarProductos, navigate);
-		cargadePedidos(setCargarPedidos,navigate);
+		cargadePedidos(setCargarPedidos, navigate);
 	}, []);
 
 	return (
 		<div>
-			<NavBar emailUs={datos}/>
+			<NavBar emailUs={datos} />
 			<h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido administrador: {datos}</h1>
 			<div>
 				<div className=' d-flex justify-content-end me-5'>
@@ -155,7 +151,7 @@ export const AdminPage = () => {
 				</div>
 				{CargarTabla()}
 			</div>
-			<Footer emailUs={datos}/>
+			<Footer emailUs={datos} />
 		</div>
 	)
 }

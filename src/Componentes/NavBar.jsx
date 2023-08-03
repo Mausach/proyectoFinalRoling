@@ -9,7 +9,7 @@ import Logo from '../assets/img/Logo/El_Buen_Comer_PNG.png'
 import { useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-export const NavBar = ({ emailUs, carritoDePedidos}) => {
+export const NavBar = ({ emailUs, carritoDePedidos }) => {
 
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ export const NavBar = ({ emailUs, carritoDePedidos}) => {
   }
 
   const ir_Register = () => {
-    navigate('/register' ,{ state: emailUs })
+    navigate('/register', { state: emailUs })
   }
 
   const ir_Home = () => {
@@ -45,10 +45,10 @@ export const NavBar = ({ emailUs, carritoDePedidos}) => {
   }
 
   return (
-    <div>
+    <div >
 
 
-      <Navbar expand="lg" className="navbar-dark navbar-expand-lg fondo_nav_footer">
+      <Navbar expand="lg" className="navbar-dark navbar-expand-lg fondo_nav_footer" id="navbar">
         <Container fluid>
           <Navbar.Brand className='text-light d-flex mx-4' onClick={ir_Home}>
             <img className="logo" style={{ width: '300px' }} src={Logo} alt="Logo" />{' '}
@@ -64,30 +64,30 @@ export const NavBar = ({ emailUs, carritoDePedidos}) => {
             >
               <Nav.Link className='text-light'>
                 <Button className="m-2" variant="outline-light" onClick={ir_Home}>
-                      INICIO
-                    </Button>
+                  INICIO
+                </Button>
 
               </Nav.Link>
 
               <Nav.Link className='text-light'>
-              <Button className="m-2" variant="outline-light" onClick={ir_tienda}>
-                      MENU
-                    </Button>
+                <Button className="m-2" variant="outline-light" onClick={ir_tienda}>
+                  MENU
+                </Button>
               </Nav.Link>
 
               <Nav.Link>
-            <Dropdown className="m-2">
+                <Dropdown className="m-2">
 
-              <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
-              QUIENES SOMOS
-              </Dropdown.Toggle>
+                  <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
+                    QUIENES SOMOS
+                  </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-              <NavDropdown.Item onClick={ir_Nosotros}>Nosotros</NavDropdown.Item>
-                  <NavDropdown.Item onClick={ir_NuestroEquipo}>Equipo de desarrollo</NavDropdown.Item>
-            </Dropdown.Menu>
+                  <Dropdown.Menu>
+                    <NavDropdown.Item onClick={ir_Nosotros}>Nosotros</NavDropdown.Item>
+                    <NavDropdown.Item onClick={ir_NuestroEquipo}>Equipo de desarrollo</NavDropdown.Item>
+                  </Dropdown.Menu>
 
-             </Dropdown>
+                </Dropdown>
               </Nav.Link>
 
               <Nav.Link className='text-light'>
