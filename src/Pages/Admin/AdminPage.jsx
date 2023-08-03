@@ -134,15 +134,15 @@ export const AdminPage = () => {
 			setLoading(false);
 		}, 2000);
 
-		cargarUser(setCargarUsuarios);
+		cargarUser(setCargarUsuarios,navigate);
 		cargarProductosDB(setCargarProductos, navigate);
-		cargadePedidos(setCargarPedidos);
+		cargadePedidos(setCargarPedidos,navigate);
 	}, []);
 
 	return (
 		<div>
 			<NavBar emailUs={datos}/>
-			<h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido Admin: {datos}</h1>
+			<h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido administrador: {datos}</h1>
 			<div>
 				<div className=' d-flex justify-content-end me-5'>
 					<h1 className='text-white texto-con-sombras-multiples'>Opciones</h1>

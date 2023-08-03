@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 
 
-export const Footer = ({emailUs}) => {
+export const Footer = ({ emailUs }) => {
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export const Footer = ({emailUs}) => {
       <footer className='p-3 rounded fondo_nav_footer mt-3 text-white'>
         <Container>
           <div className='d-flex justify-content-center align-items-center p-5 p-sm-4 mb-1'>
-            <img className="logo" style={{ width: '250px' }} src={Logo} alt="Logo" onClick={ir_Home}/>
+            <img className="logo" style={{ width: '250px' }} src={Logo} alt="Logo" onClick={ir_Home} />
           </div>
 
           <Row className="justify-content-center">
@@ -37,14 +37,14 @@ export const Footer = ({emailUs}) => {
               <h4 className='text-uppercase'>El BUEN COMER</h4>
 
               <p>
-              Deléitate con nuestros platos
-              en la comodidad de tu hogar
+                Deléitate con nuestros platos
+                en la comodidad de tu hogar
               </p>
 
               <p>
-              <a href='#' className='text-white' onClick={ir_Register}>
-                      Registreate para aprovechar las promociones
-                    </a>
+                <a href='#' className='text-white' onClick={ir_Register}>
+                  Registreate para aprovechar las promociones
+                </a>
               </p>
             </Col>
 
@@ -53,20 +53,20 @@ export const Footer = ({emailUs}) => {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  
-                     <i className="bi bi-cash text-success">  </i> En efectivo al momento de recibir tu pedido
-                  
+
+                  <i className="bi bi-cash text-success">  </i> En efectivo al momento de recibir tu pedido
+
 
                 </li>
                 <li>
-                  
-                    <i className="bi bi-credit-card text-warning"> </i>Tarjeta de credito,debito y mercadopago
-                  
+
+                  <i className="bi bi-credit-card text-warning"> </i>Tarjeta de credito,debito y mercadopago
+
 
 
 
                 </li>
-                
+
               </ul>
             </Col>
 

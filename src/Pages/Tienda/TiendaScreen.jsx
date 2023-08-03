@@ -153,7 +153,7 @@ export const TiendaScreen = () => {
             {/*debe ir en el navbar*/}
             <NavBar emailUs={emailUs} carritoDePedidos={<CarritoDePedidos carrito={carrito} setCarrito={setCarrito} cargarProductos={cargarProductos} setCargarProductos={setCargarProductos} emailUs={emailUs} navigate={navigate} />} />
 
-            <h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido Al Menu: {emailUs}</h1>
+            <h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido al menu: {emailUs}</h1>
             <div>
 
                 <div className=' d-flex justify-content-start ms-4'>
