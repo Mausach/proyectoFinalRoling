@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# El Buen Comer  - SPA (Deployado y Responsivo)
+
+► Deploy Frontend: https://el-buen-comer.netlify.app/
+
+Tecnologías necesarias:
+* React
+* Node
+* Express
+* MongoDB
+* mongoose
+
+IMPORTANTE: Se utilizo Bootstrap, react-bootstrap, sweetalert y sus correspondientes estilos, ademas de CSS puro.
+
+# Descripción
+Esta es una aplicación en la cual se pueden ver algunos menus junto con información de los mismos, al refrescar la pagina principal siempre se cargaran diferentes menus, tambien podra filtar los menus por categoria
+y se podria registrar, logear, cuenta con una funcion que envia un email al correo por si se olvida la contraseña y desea restablecerla mediante el uso de emailjs, realizar pedidos, guardar dichos pedidos,
+elegir metodo de pago como mercado pago, tambien cuenta con una pagina de administracion que podra cargar crear editar y eeliminar datos entre otras cosas:
+
+* Login donde el usuario puede autenticarse
+* Registro donde el usuario nuevo puede darse de alta
+* Pagina principal con información del restaurante y los menús disponibles para que los usuarios puedan seleccionar el que deseen.
+* Pedidos página que contendrá los menús seleccionados por el usuario y su costo total
+* Admin página donde se muestran los listados de usuarios, menús y pedidos y además realiza diferentes operaciones operaciones
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
