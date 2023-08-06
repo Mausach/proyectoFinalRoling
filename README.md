@@ -18,9 +18,27 @@ elegir metodo de pago como mercado pago, tambien cuenta con una pagina de admini
 
 * Login donde el usuario puede autenticarse
 * Registro donde el usuario nuevo puede darse de alta
-* Pagina principal con información del restaurante y los menús disponibles para que los usuarios puedan seleccionar el que deseen.
+* Pagina principal con información del restaurante y los menús disponibles
+* Pagina de Menus para que los usuarios puedan seleccionar el que deseen
 * Pedidos página que contendrá los menús seleccionados por el usuario y su costo total
 * Admin página donde se muestran los listados de usuarios, menús y pedidos y además realiza diferentes operaciones operaciones
+
+#### Frontend
+
+Aplicación de React
+__Pagina inicial__: 
+Landing page con:
+- [ ] Barra de Navegacion con los siguientes botones:
+  * Boton Inicio/Logo dirigien al home de la aplicacion (`Ruta principal`)
+  * Boton Menu para dirigirse a donde el usuario puede seleccionar los menus que decean
+  * Boton Desplegable QUIENES SOMOS con las opciones de NOSOTROS y el EQUIPO DE DESARROLLO
+  * Boton de Iniciar sesion para dirigirte al formulario del login
+  * Boton de Registrarse para dirigirse al formulario de registro
+    
+- [ ] Carousel de imagenes representativas del sitio
+- [ ] Area principal donde se mostraran 3 menus diferentes cada vez que se actualice el sitio (siempre y cuando esten disponibles)
+- [ ] Area donde se muestran imagenes promocionales de bebidas
+- [ ] Parte inferior de la página con información relevante de la misma
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
