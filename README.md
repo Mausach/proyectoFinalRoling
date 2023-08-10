@@ -1,5 +1,27 @@
 # El Buen Comer  - SPA (Deployado y Responsivo)
 
+<p align="center">
+  <img src="./src/assets/img/Pagina/Home_1_.png"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Home_2_.jpg"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Menu_1_.jpg"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Menu_2_.jpg"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Login_.jpg"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Registro_.jpg"/>
+</p>
+<p align="center">
+  <img src="./src/assets/img/Pagina/Nosotros_.jpg"/>
+</p>
+
 ► Deploy Frontend: https://el-buen-comer.netlify.app/
 
 Tecnologías necesarias:
