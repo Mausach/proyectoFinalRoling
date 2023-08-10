@@ -12,11 +12,10 @@ Tecnologías necesarias:
 IMPORTANTE: Se utilizo Bootstrap, react-bootstrap, sweetalert y sus correspondientes estilos, ademas de CSS puro.
 
 # Descripción
-Esta es una aplicación en la cual se pueden ver algunos menus junto con información de los mismos, al refrescar la pagina principal siempre se cargaran diferentes menus, tambien podra filtar los menus por categoria
-y se podria registrar, logear, cuenta con una funcion que envia un email al correo por si se olvida la contraseña y desea restablecerla mediante el uso de emailjs, realizar pedidos, guardar dichos pedidos,
-elegir metodo de pago como mercado pago, tambien cuenta con una pagina de administracion que podra cargar crear editar y eeliminar datos entre otras cosas:
+Esta es una aplicación en la cual se pueden ver algunos menus junto con información de los mismos pudiendo filtrar por categorias y realizar pedidos eligiendo el metodo de pago que quieras,
+para ello cuenta con la funcion de registrarse y iniciar sesion para los usuarios y funciones de cargar, crear, editar y eliminar datos entre otras, para los administradores.
 
-* Login donde el usuario puede autenticarse
+* Iniciar sesion/Login donde el usuario puede autenticarse
 * Registro donde el usuario nuevo puede darse de alta
 * Pagina principal con información del restaurante y los menús disponibles
 * Pagina de Menus para que los usuarios puedan seleccionar el que deseen
@@ -40,71 +39,42 @@ Landing page con:
 - [ ] Area donde se muestran imagenes promocionales de bebidas
 - [ ] Parte inferior de la página con información relevante de la misma
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+__Pagina Menu__:
+- [ ] Filtrar menus por categoria
+- [ ] Muestra los menus siempre y cuando quede cantidad y tenga el estado de "activo"
+- [ ] Generacion del carrito PEDIDOS con los menus selleccionado por el usuario detallado y su precio total
+- [ ] Eleccion de pago en efectivo o atravez de mercadopago FUNCIONAL
+   
+__Paginas Quienes somos__:
+ - [ ] Pagina Nosotros con informacion y una leyenda sobre el restaurante
+ - [ ] Pagina de equipo de desarollo con informaciond el desarrollador
+   
+__Pagina Iniciar sesion__:
+ - [ ] Formulario donde se ingresan los siguientes datos:
+     * Email
+     * Contraseña
+ - [ ] Restablecer contraseña FUNCIONAL que envia un email al correo por si se olvida la contraseña y desea restablecerla mediante el uso de emailjs
+ - [ ] Botones para iniciar con google o facebook 
+ 
+__Pagina Registro__:
+- [ ] Formulario para alta de usuario con los siguientes datos:
+      * Nombre Cmpleto
+      * Email
+      * Contraseña
+      
+__Pagina del Administrador__:
+- [ ] Tablas con toda la informacion de:
+      * Usuarios
+      * Menus
+      * Pedidos
+- [ ] Filtrar las tablas a eleccion
+- [ ] Inhabilitar usuario con un boton
+- [ ] Alta a un usuario o admin mediante un formulario
+- [ ] Editar todos los datos de un menu mediante un formulario
+- [ ] Eliminar cualquier menu
+- [ ] Alta de un nuevo menu mediante un formulario
+- [ ] Confirmar el pedido mediante un boton
 
-## Available Scripts
+ IMPORTANTE: al editar,eliminar o dar de alta tanto en la tabla menu como en la tabla usuario refrescar para que los cambios sean visibles     
 
-In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
