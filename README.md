@@ -80,9 +80,9 @@ __Pagina Iniciar sesion__:
  
 __Pagina Registro__:
 - [ ] Formulario para alta de usuario con los siguientes datos:
-      * Nombre Cmpleto
-      * Email
-      * Contraseña
+      - Nombre Cmpleto
+      - Email
+      - Contraseña
       
 __Pagina del Administrador__:
 - [ ] Tablas con toda la informacion de:
