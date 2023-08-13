@@ -82,7 +82,7 @@ __Pagina Registro__:
 - [ ] Formulario para alta de usuario con los siguientes datos:
       - Nombre Cmpleto
       - Email
-      - Contraseña
+      - Contraseña (con metodo de encriptacion)
       
 __Pagina del Administrador__:
 - [ ] Tablas con toda la informacion de:
