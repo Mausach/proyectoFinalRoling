@@ -9,16 +9,16 @@ export const LoginScreen = () => {
 
   const location = useLocation();
 
-  const emailUs = location.state;//recibe el email del loguin
+  const emailUs = location.state;
 
-  //para animaciion de carga al principio de cada screen
+  
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
   }, 2000);
-  //fin de animacion cargando
+  
 
-  //condicional para la animacion de cargando
+  
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center customHeigth">
