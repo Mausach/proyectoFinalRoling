@@ -17,7 +17,6 @@ export const ModalLogin = ({ isModalOpen, setIsModalOpen }) => {
       swal("ERROR", "Debe ingresar su correo electronico", "error");
     } else {
       enviarCorreo(Usemail.email, setIsModalOpen)
-
     }
   }
 

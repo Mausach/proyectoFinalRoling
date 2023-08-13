@@ -7,12 +7,12 @@ import { AlertaEditar } from '../helpers/EditarProducto';
 
 export const ModalEditarProducto = ({ isModalOpenEditar, setIsModalOpenEditar, productoEditar, setProductoEditar }) => {
 
-  //funcion para cuando se ejecuta el submit del editar
+  
   const onSubmitFormEditar = (e) => {
     e.preventDefault();
     const { _id, name, estado, precio, url_img, detalle, categoria, cantidad } = productoEditar;
 
-    //validaciones
+    
     if (
       name.length === 0 ||
       precio.length === 0 ||
@@ -24,14 +24,14 @@ export const ModalEditarProducto = ({ isModalOpenEditar, setIsModalOpenEditar, p
         title: "faltan datos necesarios",
         icon: "error",
       });
-      return console.log('todos los campos son obligatorios');
+      
     } else {
       setIsModalOpenEditar(false);
       AlertaEditar(_id, name, estado, precio, url_img, detalle, categoria, cantidad);
     }
   };
 
-  //on change para leer los datos del edit
+  
   const onChangeFormEditar = (e) => {
     setProductoEditar({
       ...productoEditar,
@@ -41,7 +41,7 @@ export const ModalEditarProducto = ({ isModalOpenEditar, setIsModalOpenEditar, p
 
   return (
     <div>
-      {/* Modal de Editar */}
+      
       <Modal isOpen={isModalOpenEditar}
         onRequestClose={() => setIsModalOpenEditar(false) }
         className='text-white d-flex justify-content-center align-items-center mt-2 border'

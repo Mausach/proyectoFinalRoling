@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 
 
 
-//Alerta Realizar
+
 export const AlertaRealizar = (_id, usuario, menu, navigate) => {
     swal(
         {
@@ -26,14 +26,14 @@ export const AlertaRealizar = (_id, usuario, menu, navigate) => {
 }
 
 
-//metodo de cambiar el pedido a realizado
+
 const confirmarPedidoClick = async (_id, navigate) => {
 
     try {
         const resp = await authApi.put('/admin/confirmar', {
             _id,
         });
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");

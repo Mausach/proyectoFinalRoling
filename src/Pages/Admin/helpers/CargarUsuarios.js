@@ -1,7 +1,7 @@
 import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
-//cargarUsuarios desde DB
+
 export const cargarUser = async (setCargarUsuarios,navigate) => {
     try {
         const resp = await authApi.get('/admin/usuarios');

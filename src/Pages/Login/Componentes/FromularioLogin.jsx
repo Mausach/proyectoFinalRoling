@@ -9,10 +9,10 @@ import { ModalLogin } from './ModalLogin';
 
 export const FromularioLogin = () => {
 
-    //para el estado del modal
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    //state para usuario e email del usuario
+    
     const [user, setUser] = useState({
         email: "",
         password: "",
@@ -20,7 +20,7 @@ export const FromularioLogin = () => {
 
     const navigate = useNavigate();
 
-    //captura lo el formulario y verifica los campos lanzando una alerta con swal
+    
     const onSubmit = (e) => {
         e.preventDefault();
         if (
@@ -31,8 +31,7 @@ export const FromularioLogin = () => {
             starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
         }
     }
-
-    //controla los cambios que se hagan en los campos del formulario
+    
     const onInputChange = (e) => {
         setUser({
             ...user,
@@ -40,11 +39,10 @@ export const FromularioLogin = () => {
         });
     }
 
-    //para abrir el modal desde la etiqueta a
+    
     const abrirModal = (e) => {
         e.preventDefault();
         setIsModalOpen(true);
-
     }
 
     return (

@@ -11,7 +11,7 @@ export const NosotrosPage = () => {
 
   const location = useLocation();
 
-  const emailUs = location.state;//recibe el email del loguin
+  const emailUs = location.state;
 
   return (
     <div>

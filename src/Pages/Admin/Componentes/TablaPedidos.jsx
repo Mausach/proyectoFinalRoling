@@ -30,7 +30,7 @@ export const TablaPedidos = ({ cargarPedidos, navigate }) => {
             </tr>
           </thead>
 
-          {cargarPedidos.map((pedidos) => { //cambiar esto para que traiga pedidos
+          {cargarPedidos.map((pedidos) => { 
             const Menus = pedidos.menu.map((dato) => `${dato.cantidad} - ${dato.name}`).join(', ');
             return (
               <tbody key={pedidos._id}>
@@ -47,7 +47,7 @@ export const TablaPedidos = ({ cargarPedidos, navigate }) => {
                         onClick={() => AlertaRealizar(pedidos._id, pedidos.usuario, pedidos.menu, navigate)}>
                         <strong className='font-weight-bold'>
                           <h3>
-                            {/*Realizar*/}
+                            
                             <i className='bi bi-cart-check'></i>
                           </h3>
                         </strong>
@@ -56,7 +56,7 @@ export const TablaPedidos = ({ cargarPedidos, navigate }) => {
                     {pedidos.estado === 'Realizado' && (
                       <strong className='font-weight-bold text-Light'>
                         <h3>
-                          {/*Realizar*/}
+                          
                           <i className='bi bi-cart-check-fill'></i>
                         </h3>
                       </strong>

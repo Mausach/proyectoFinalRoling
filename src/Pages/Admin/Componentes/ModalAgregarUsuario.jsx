@@ -8,20 +8,20 @@ import { AlertaGuardarUs } from '../helpers/GuardarUsuario';
 
 export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate }) => {
 
-  //estado para guardar los datos del Usuario desde la pagina de administracion
+  
   const [formDateUs, setFormDateUs] = useState({
     name: '',
     email: '',
     password: '',
   });
 
-  //cuando el admin use el boton alta de Usuarios
+  
   const onSubmitFormUs = (e) => {
     e.preventDefault();
 
     const { name, email, password, rol } = formDateUs;
 
-    //validaciones
+    
     if (
       name.length === 0 ||
       email.length === 0 ||
@@ -32,15 +32,15 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
         title: "todos los campos son obligatorios",
         icon: "error",
       });
-      return console.log('todos los campos son obligatorios');
+      
     } else {
-      console.log(formDateUs);
+      
       AlertaGuardarUs(name, email, password, rol, navigate);
       setIsModalOpenUs(false);
     }
   };
 
-  // onChange es leer los datos cuando vea cambios en el formulario
+  
   const onChangeFormUs = (e) => {
     setFormDateUs({
       ...formDateUs,
@@ -50,14 +50,14 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
 
   const customModalStyles = {
     content: {
-      maxWidth: '90%', // Establece el ancho máximo del modal
-      margin: 'auto', // Centra el modal horizontalmente
+      maxWidth: '90%', 
+      margin: 'auto', 
     },
   };
 
   return (
     <div>
-      {/* Modal para agregar Usuarios */}
+      
 
       <Modal isOpen={isModalOpenUs} onRequestClose={() => setIsModalOpenUs(false)} style= {customModalStyles}
         className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5 border'>

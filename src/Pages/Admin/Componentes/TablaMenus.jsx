@@ -7,10 +7,10 @@ import { ModalEditarProducto } from './ModalEditarProducto';
 
 export const TablaMenus = ({ cargarProductos, navigate }) => {
 
-  //estado para almacenar los datos del producto que quiero editar
+  
   const [productoEditar, setProductoEditar] = useState({});
 
-  //estado para abrir y cerrar el modal de editar producto
+  
   const [isModalOpenEditar, setIsModalOpenEditar] = useState(false);
 
   const editarProductoClick = (producto) => {
@@ -63,7 +63,7 @@ export const TablaMenus = ({ cargarProductos, navigate }) => {
                       onClick={() => editarProductoClick(producto)}>
                       <strong className='font-weight-bold'>
                         <h3>
-                          {/*Editar*/}
+                          
                           <i className='bi bi-pencil-square'></i>
                         </h3>
                       </strong>
@@ -75,7 +75,7 @@ export const TablaMenus = ({ cargarProductos, navigate }) => {
                       onClick={() => AlertaEliminar(producto._id, producto.name, navigate)}>
                       <strong className='font-weight-bold'>
                         <h3>
-                          {/*Eliminar*/}
+                          
                           <i className='bi bi-trash3-fill'></i>
                         </h3>
                       </strong>

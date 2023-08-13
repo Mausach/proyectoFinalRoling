@@ -7,7 +7,7 @@ import { eliminarProductoDelCarrito, obtenerDatos } from '../helpers/Operaciones
 
 export const CarritoDePedidos = ({ carrito, setCarrito, cargarProductos, setCargarProductos, emailUs, navigate }) => {
 
-    let total = 0;//valor que se muestra en la tabla del carrito para el monto total
+    let total = 0;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -60,14 +60,14 @@ export const CarritoDePedidos = ({ carrito, setCarrito, cargarProductos, setCarg
                                             </td>
                                             <td>{producto.name}</td>
                                             <td>{'$' + producto.precio}</td>
-                                            <td>{producto.cantidad /*esto cambiar por la cantidad que se pide*/}</td>
+                                            <td>{producto.cantidad}</td>
 
                                             <td>
                                                 <button className='btn btn-outline-danger'
                                                     onClick={(e) => eliminarProductoDelCarrito(producto._id, e, cargarProductos, setCargarProductos, carrito, setCarrito)}>
                                                     <strong className='font-weight-bold'>
                                                         <h3>
-                                                            {/*Eliminar*/}
+                                                            
                                                             <i className='bi bi-trash3-fill'></i>
                                                         </h3>
                                                     </strong>

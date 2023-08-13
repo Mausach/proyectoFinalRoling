@@ -11,12 +11,10 @@ export const HomePage = () => {
 
   const location = useLocation();
 
-  const emailUs = location.state;//recibe el email del loguin
-
-  //estado para guardar los productos traidos del backend
+  const emailUs = location.state;
+  
   const [cargarProductos, setCargarProductos] = useState([]);
-
-  //para animaciion de carga al principio de cada screen
+  
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
@@ -27,8 +25,7 @@ export const HomePage = () => {
   useEffect(() => {
     cargarProductosDB(setCargarProductos, navigate);
   }, []);
-
-  //condicional para la animacion de cargando
+  
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center customHeigth">

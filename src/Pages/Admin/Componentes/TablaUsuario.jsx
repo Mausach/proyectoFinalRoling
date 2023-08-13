@@ -44,7 +44,7 @@ export const TablaUsuario = ({ cargarUsuarios, navigate }) => {
                         onClick={() => AlertaInhabilitar(usuario._id, usuario.name, usuario.email, navigate)}>
                         <strong className='font-weight-bold'>
                           <h3>
-                            {/*Inhabilitar*/}
+                            
                             <i className='bi bi-person-fill-slash'> </i>
                           </h3>
                         </strong>
@@ -53,12 +53,10 @@ export const TablaUsuario = ({ cargarUsuarios, navigate }) => {
                     )}
                     {usuario.estado === 'Inactivo' && (
 
-                      <button className='btn btn-outline-Secondary '
-											/*onClick={() => AlertaInhabilitar(usuario._id, usuario.name,usuario.email)} 
-											se podria modificar el onCklick con un metodo para habilitar a l usuario se se quisiese*/>
+                      <button className='btn btn-outline-Secondary'>
                         <strong className='font-weight-bold'>
                           <h3>
-                            {/*Inhabilitar*/}
+                            
                             <i className='bi bi-person-fill-slash'> </i>
                           </h3>
                         </strong>

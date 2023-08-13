@@ -7,16 +7,14 @@ import { Footer } from '../../Componentes/Footer';
 export const ReestablecerScreen = () => {
 
   localStorage.removeItem('token');
-   const emailUs = null;
+  const emailUs = null;
 
-  //para animaciion de carga al principio de cada screen
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
   }, 2000);
-  //fin de animacion cargando
 
-  //condicional para la animacion de cargando
+
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center customHeigth">
@@ -27,13 +25,13 @@ export const ReestablecerScreen = () => {
   } else {
     return (
       <div>
-        <NavBar emailUs={emailUs}/>
+        <NavBar emailUs={emailUs} />
         <div className="d-flex align-items-center justify-content-center customHeigth">
-        <FormularioRestablecer/>
+          <FormularioRestablecer />
+        </div>
+        <Footer emailUs={emailUs} />
       </div>
-      <Footer emailUs={emailUs}/>
-      </div>
-      
+
     )
   }
 }

@@ -11,16 +11,14 @@ export const RegisterScreen = () => {
 
   const location = useLocation();
 
-  const emailUs = location.state;//recibe el email del loguin
-
-  //para animaciion de carga al principio de cada screen
+  const emailUs = location.state;
+  
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
   }, 2000);
-  //fin de animacion cargando
-
-  //condicional para la animacion de cargando
+  
+  
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center customHeigth">

@@ -7,7 +7,7 @@ import { AlertaGuardarProducto } from '../helpers/GuardarProducto';
 
 export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) => {
 
-  //estado para guardar los datos del producto desde la pagina de administracion
+  
   const [formDate, setFormDate] = useState({
     name: '',
     precio: '',
@@ -16,7 +16,7 @@ export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) 
     cantidad: '',
   });
 
-  //onchange para capturar del modal
+  
   const onChangeForm = (e) => {
     setFormDate({
       ...formDate,
@@ -24,13 +24,13 @@ export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) 
     });
   };
 
-  //cuando el admin use el boton alta de productos
+  
   const onSubmitFormProd = (e) => {
     e.preventDefault();
 
     const { name, precio, url_img, detalle, categoria, cantidad } = formDate;
 
-    //validaciones
+    
     if (
       name.length === 0 ||
       precio.length === 0 ||
@@ -42,9 +42,9 @@ export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) 
         title: "faltan datos necesarios",
         icon: "error",
       });
-      return console.log('todos los campos son obligatorios');
+      
     } else {
-      console.log(formDate);
+      
       AlertaGuardarProducto(name, precio, url_img, detalle, categoria, cantidad, navigate);
       setIsModalOpen(false);
     }
@@ -52,7 +52,7 @@ export const ModalAgregarProducto = ({ isModalOpen, setIsModalOpen, navigate }) 
 
   return (
     <div>
-      {/* Modal para agregar producto */}
+      
 
       <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}
         className='text-white d-flex justify-content-center align-items-center p-5 p-sm-4 mt-5'>

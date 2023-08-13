@@ -18,43 +18,37 @@ export const TiendaScreen = () => {
 
     const location = useLocation();
 
-    const emailUs = location.state;//recibe el email del loguin
-
-
-    //para animaciion de carga al principio de cada screen
+    const emailUs = location.state;
+    
     const [loading, setLoading] = useState(true);
-
-    //estado para guardar los productos traidos del backend
+    
     const [cargarProductos, setCargarProductos] = useState([]);
-
-    //estado para guardar arreglo de los pedidos realizados
+    
     const [carrito, setCarrito] = useState([]);
 
     const navigate = useNavigate();
-
-    //estado para opcion desplegada de la lista
+    
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('Todos');
-
-    //para la seleccion  de menus
+    
     const handleSelectChange = (e) => {
         setOpcionSeleccionada(e.target.value);
     };
 
-    //para la paginacion de todo el menu
-    const productosPorPagina = 6; // Número de productos por página
-    //para el paginado
+    
+    const productosPorPagina = 6; 
+    
     const [numPage, setNumPage] = useState(1);
 
     const startIndex = (numPage - 1) * productosPorPagina;
     const endIndex = startIndex + productosPorPagina;
     const productosPagina = cargarProductos.slice(startIndex, endIndex);
     const numPaginas = Math.ceil(cargarProductos.length / productosPorPagina);
-    //fin de datos para paginacion
+    
 
     const cambiarPagina = (pageNumber) => {
         setNumPage(pageNumber);
-        // Aquí puedes realizar alguna acción adicional, como obtener los datos de la página seleccionada
-        console.log('Página cambiada:', pageNumber);
+        
+        
     };
 
     const Paginacion = () => {
@@ -78,8 +72,7 @@ export const TiendaScreen = () => {
     const cargarcards_carrito = () => {
 
         if (opcionSeleccionada != 'Todos') {
-            //metodo para el filtrado        
-            //condicional para la animacion de cargando
+            
             if (loading) {
                 return (
                     <div className="d-flex align-items-center justify-content-center customHeigth">
@@ -105,7 +98,7 @@ export const TiendaScreen = () => {
                 )
             }
         } else {
-            //condicional para la animacion de cargando
+            
             if (loading) {
                 return (
                     <div className="d-flex align-items-center justify-content-center customHeigth">
@@ -140,7 +133,7 @@ export const TiendaScreen = () => {
         setTimeout(() => {
             setLoading(false);
         }, 2000);
-        //fin de animacion cargando
+        
 
         EstadoPago(navigate)
         cargarProductosDB(setCargarProductos, navigate);
@@ -150,7 +143,7 @@ export const TiendaScreen = () => {
     return (
 
         <div>
-            {/*debe ir en el navbar*/}
+            
             <NavBar emailUs={emailUs} carritoDePedidos={<CarritoDePedidos carrito={carrito} setCarrito={setCarrito} cargarProductos={cargarProductos} setCargarProductos={setCargarProductos} emailUs={emailUs} navigate={navigate} />} />
 
             <h1 className="text-center p-3 text-white texto-con-sombras-multiples">Bienvenido al menu: {emailUs}</h1>

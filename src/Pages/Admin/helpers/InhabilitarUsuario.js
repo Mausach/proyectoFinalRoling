@@ -2,7 +2,7 @@ import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
 
-//Alerta Inhabilitar
+
 export const AlertaInhabilitar = (_id, name, email, navigate) => {
     swal(
         {
@@ -24,13 +24,13 @@ export const AlertaInhabilitar = (_id, name, email, navigate) => {
         });
 }
 
-//metodo para dehabilitar a un usuario
+
 const deshabilitarUsuarioClick = async (_id, navigate) => {
     try {
         const resp = await authApi.put('/admin/Deshabilitar', {
             _id,
         });
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");

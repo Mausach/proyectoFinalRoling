@@ -2,7 +2,7 @@ import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
 
-//Alerta Eliminar
+
 export const AlertaEliminar = (_id, name, navigate) => {
     swal(
         {
@@ -25,11 +25,11 @@ export const AlertaEliminar = (_id, name, navigate) => {
         });
 }
 
-//metodo de eliminar menu (falta hacer el back de esto)
+
 const eliminarProductoClick = async (id, navigate) => {
     try {
         const resp = await authApi.delete(`/admin/eliminar/${id}`);
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");

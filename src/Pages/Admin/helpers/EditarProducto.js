@@ -2,7 +2,7 @@ import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
 
-//Alerta Editar
+
 export const AlertaEditar = (_id, name, estado, precio, url_img, detalle, categoria, cantidad) => {
     swal(
         {
@@ -26,7 +26,7 @@ export const AlertaEditar = (_id, name, estado, precio, url_img, detalle, catego
 
 }
 
-//metodo de modificar menu (falta hacer el backend de esto)
+
 const editarProductoDB = async (_id, name, estado, precio, url_img, detalle, categoria, cantidad) => {
     try {
         const resp = await authApi.put('/admin/edit', {
@@ -40,7 +40,7 @@ const editarProductoDB = async (_id, name, estado, precio, url_img, detalle, cat
             cantidad,
         });
 
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");

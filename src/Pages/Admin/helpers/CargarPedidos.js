@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 
 
 
-//carga de pedidos desde DB
+
 export const cargadePedidos = async (setCargarPedidos,navigate) => {
     try {
         const resp = await authApi.get('/admin/pedidos');

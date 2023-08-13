@@ -1,7 +1,7 @@
 import swal from 'sweetalert';
 import authApi from "../../../api/authApi";
 
-//cargarProductos desde DB
+
 export const cargarProductosDB = async (setCargarProductos, navigate) => {
     try {
         const resp = await authApi.get('/admin/productos/aleatorios');

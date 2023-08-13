@@ -14,31 +14,31 @@ import { Footer } from '../../Componentes/Footer';
 
 export const AdminPage = () => {
 
-	//para animaciion de carga al principio de cada screen
+	
 	const [loading, setLoading] = useState(true);
 
 	const location = useLocation();
-	const datos = location.state;//recibe el nombre desde el login
+	const datos = location.state;
 
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const [isModalOpenUs, setIsModalOpenUs] = useState(false);
 
-	//estado para guardar los productos traidos del backend
+	
 	const [cargarProductos, setCargarProductos] = useState([]);
 
-	//estado para guardar los usuarios traidos del backend
+	
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
 
-	//estado para guardar los pedidos traidos del backend
+	
 	const [cargarPedidos, setCargarPedidos] = useState([]);
 
-	//estado para opcion desplegada de la lista
+	
 	const [opcionSeleccionada, setOpcionSeleccionada] = useState('usuario');
 
 	const navigate = useNavigate();
 
-	//metodo para inhabilitar usuario (recordatorio falta controlar que el usuario este activo)
+	
 
 	const handleSelectChange = (e) => {
 		setOpcionSeleccionada(e.target.value);

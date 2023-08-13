@@ -53,23 +53,13 @@ export const Footer = ({ emailUs }) => {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-
                   <i className="bi bi-cash text-success">  </i> En efectivo al momento de recibir tu pedido
-
-
                 </li>
                 <li>
-
                   <i className="bi bi-credit-card text-warning"> </i>Tarjeta de credito,debito y mercadopago
-
-
-
-
                 </li>
-
               </ul>
             </Col>
-
 
             <Col lg='3' md='6' className='mb-4 mb-md-0'>
               <h4 className='text-uppercase mb-0'>Nuestras Redes</h4>

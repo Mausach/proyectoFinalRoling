@@ -1,7 +1,7 @@
 import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
-//Alerta guardar usuario
+
 export const AlertaGuardarUs = (name, email, password, rol, navigate) => {
     swal(
         {
@@ -23,7 +23,7 @@ export const AlertaGuardarUs = (name, email, password, rol, navigate) => {
         });
 }
 
-//guardar Usuario en DB
+
 const guardarUsuarioDB = async (name, email, password, rol, navigate) => {
     try {
         const resp = await authApi.post('/auth/new', {
@@ -32,7 +32,7 @@ const guardarUsuarioDB = async (name, email, password, rol, navigate) => {
             password,
             rol,
         });
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");

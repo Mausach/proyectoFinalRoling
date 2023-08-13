@@ -1,35 +1,33 @@
 import swal from 'sweetalert';
 import authApi from '../../../api/authApi';
 
-//guarda datos en el carrito
+
 export const guardarDatosEnCarrito = (id, e, carrito, setCarrito, cargarProductos, emailUs, navigate) => {
   e.preventDefault();
   if (emailUs != null) {
 
-    // Buscar el producto correspondiente en el arreglo
+    
     const product = cargarProductos.find((producto) => producto._id === id);
 
-    // Verificar si se encontró el producto
+    
     if (product) {
       product.cantidad = product.cantidad - 1
       const prodcar = carrito.find((prod) => prod._id === product._id)
-
-      // Verificar si el producto ya existe en el carrito
+      
       if (prodcar) {
-        // Actualizar la cantidad del producto existente en el carrito
+        
         setCarrito((prevCarrito) =>
           prevCarrito.map((prod) =>
             prod._id === product._id ? { ...prod, cantidad: prod.cantidad + 1 } : prod
           )
         );
       } else {
-        // Si el producto no existe en el carrito, agregarlo con una cantidad de 1
+        
         setCarrito((prevCarrito) => [...prevCarrito, { ...product, cantidad: 1 }]);
-        window.scrollTo({ top: 0, behavior: 'smooth' })//redirige al navbar para ver el carrito pedidos
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       }
     }
     
-
   } else {
 
     swal(
@@ -54,7 +52,7 @@ export const guardarDatosEnCarrito = (id, e, carrito, setCarrito, cargarProducto
 
 };
 
-//elimina producto del carrito
+
 export const eliminarProductoDelCarrito = (id, e, cargarProductos, setCargarProductos, carrito, setCarrito) => {
 
   e.preventDefault();
@@ -90,11 +88,11 @@ export const eliminarProductoDelCarrito = (id, e, cargarProductos, setCargarProd
   }
 };
 
-//obtener datos para armar el pedido y orden de compra
+
 export const obtenerDatos = (e, num, carrito, emailUs, navigate) => {
   let menu = ''
   const fechaHoraActual = new Date();
-  const fecha = fechaHoraActual.toISOString().slice(0, 10); // Obtiene la fecha en formato 'YYYY-MM-DD'
+  const fecha = fechaHoraActual.toISOString().slice(0, 10); 
 
   const opcionesFormato = {
     hour: 'numeric',
@@ -105,12 +103,9 @@ export const obtenerDatos = (e, num, carrito, emailUs, navigate) => {
 
   const formatoHora = new Intl.DateTimeFormat([], opcionesFormato);
   const hora = formatoHora.format(new Date());
-
-  console.log(hora);
-
-  //const hora = fechaHoraActual.toISOString().slice(11, 19); // Obtiene la hora en formato 'HH:MM:SS'
-
-  let precio_total = 0;//falta metodo que calcule el precio total
+  
+  
+  let precio_total = 0;
 
   const menus = carrito.map((producto) => {
     menu = menu + '\n' + producto.name + ' '
@@ -127,7 +122,7 @@ export const obtenerDatos = (e, num, carrito, emailUs, navigate) => {
   AlertaRealizar(e, num, fecha, hora, precio_total, menu, menus, emailUs, navigate);
 };
 
-//Alerta Realizar pedido o orden
+
 export const AlertaRealizar = (e, num, fecha, hora, precio_total, menu, menus, emailUs, navigate) => {
   e.preventDefault();
   swal(
@@ -144,7 +139,7 @@ export const AlertaRealizar = (e, num, fecha, hora, precio_total, menu, menus, e
           let estado = ''
           crearPedido(fecha, hora, precio_total, menus, estado, emailUs, navigate);
         } else {
-          console.log(menus, precio_total);
+          
           pagarPedido(e, fecha, hora, precio_total, menus, emailUs, navigate);
         }
         swal("El pedido esta enproceso", {
@@ -158,7 +153,7 @@ export const AlertaRealizar = (e, num, fecha, hora, precio_total, menu, menus, e
 
 }
 
-//va directo al backend para cargar el pedido con estado pendiente
+
 export const crearPedido = async (fecha, hora, precio_total, menus, estado, emailUs, navigate,) => {
   try {
     const resp = await authApi.post('/tienda/new', {
@@ -181,7 +176,7 @@ export const crearPedido = async (fecha, hora, precio_total, menus, estado, emai
   }
 }
 
-//genero la orden d epago en mercadopago
+
 export const pagarPedido = async (e, fecha, hora, precio_total, menus, emailUs, navigate) => {
   e.preventDefault();
   try {
@@ -194,10 +189,10 @@ export const pagarPedido = async (e, fecha, hora, precio_total, menus, emailUs, 
       precio_total: precio_total,
     });
 
-    console.log(resp.data.msg);
+    
     window.location.href = resp.data.url_comp;
 
-    //guardo en localStorage para recuperar los datos despues de que se confirme la operacion
+    
     const miPedido = { emailUs, fecha, hora, menus, precio_total };
     const miObjetoString = JSON.stringify(miPedido);
     localStorage.setItem('miPedido', miObjetoString);
@@ -212,29 +207,26 @@ export const pagarPedido = async (e, fecha, hora, precio_total, menus, emailUs, 
   }
 };
 
-//captura ele stado del pago
+
 export const EstadoPago = ( navigate) => {
 
   try {
-    //let precio_total=0
+    
     const miObjetoString = localStorage.getItem('miPedido');
     const miPedido = JSON.parse(miObjetoString);
 
     const urlParams = new URLSearchParams(window.location.search);
-    const paymentStatus = urlParams.get('status'); // Supongamos que "status" es el parámetro que indica el estado del pago
-
-    // Aquí puedes actualizar el estado de tu aplicación con el resultado del pago
+    const paymentStatus = urlParams.get('status'); 
+    
     if (paymentStatus === 'approved') {
       const estado = 'Realizado'
       crearPedido(miPedido.fecha, miPedido.hora, miPedido.precio_total, miPedido.menus, estado, miPedido.emailUs, navigate);
-      console.log(miPedido.precio_total);
+      
       localStorage.removeItem('miPedido');
     }
-    // por ejemplo, puedes usar un estado local o un contexto para almacenar la información
-
-    //limpio el local sotorage para la proxima operacion
+    
+    
     console.log(`Estado del pago: ${paymentStatus}`);
-
 
   } catch (error) {
     console.log(error);

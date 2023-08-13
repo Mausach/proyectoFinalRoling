@@ -1,7 +1,7 @@
 import authApi from '../../../api/authApi';
 import swal from 'sweetalert';
 
-//Alerta guardar producto
+
 export const AlertaGuardarProducto = (name, precio, url_img, detalle, categoria, cantidad, navigate) => {
     swal(
         {
@@ -23,7 +23,7 @@ export const AlertaGuardarProducto = (name, precio, url_img, detalle, categoria,
         });
 }
 
-//guardar Producto en DB
+
 const guardarProductoDB = async (name, precio, url_img, detalle, categoria, cantidad, navigate) => {
     try {
         const resp = await authApi.post('/admin/new', {
@@ -34,7 +34,7 @@ const guardarProductoDB = async (name, precio, url_img, detalle, categoria, cant
             categoria,
             cantidad,
         });
-        console.log(resp);
+        
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");
