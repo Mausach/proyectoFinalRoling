@@ -25,8 +25,7 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
     if (
       name.length === 0 ||
       email.length === 0 ||
-      password.length === 0 ||
-      rol.length === 0
+      password.length === 0
     ) {
       swal({
         title: "todos los campos son obligatorios",
@@ -101,7 +100,7 @@ export const ModalAgregarUsuario = ({ isModalOpenUs, setIsModalOpenUs, navigate 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Rol :</Form.Label>
             <select name="rol" onChange={onChangeFormUs} className='rounded mt-3 ms-3'>
-              <option value="usuario">Usuario</option>
+              <option value="usuario" selected>Usuario</option>
               <option value="admin">Administrador</option>
             </select>
           </Form.Group>

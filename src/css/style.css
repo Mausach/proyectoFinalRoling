@@ -12,8 +12,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: 'JosefinSans', sans-serif;
-
+  overflow: hidden;
+  overflow-y: scroll;
 }
+
 
 .customHeigth {
   min-height: 70vh;

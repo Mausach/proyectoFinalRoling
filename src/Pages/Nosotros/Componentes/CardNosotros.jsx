@@ -11,7 +11,7 @@ export const CardNosotros = () => {
       <Card.Header></Card.Header>
       <Card.Body>
       <div className='d-flex justify-content-center align-items-center p-5 p-sm-4 mt-2'>
-            <img className="logo" style={{ width: '700px' }} src={Logo} alt="Logo"/>
+            <img className="logo img-fluid" style={{ width: '700px' }} src={Logo} alt="Logo"/>
           </div>
         <Card.Title>Deléitate con nuestros platos, directo a tu hogar</Card.Title>
         <Card.Text>
