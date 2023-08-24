@@ -2,6 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
 import { AlertaInhabilitar } from '../helpers/InhabilitarUsuario';
+import { AlertaHabilitar } from '../helpers/habilitarUsuario';
 
 export const TablaUsuario = ({ cargarUsuarios, navigate }) => {
 
@@ -53,7 +54,8 @@ export const TablaUsuario = ({ cargarUsuarios, navigate }) => {
                     )}
                     {usuario.estado === 'Inactivo' && (
 
-                      <button className='btn btn-outline-Secondary'>
+                      <button className='btn btn-outline-Secondary'
+                      onClick={() => AlertaHabilitar(usuario._id, usuario.name, usuario.email, navigate)}>
                         <strong className='font-weight-bold'>
                           <h3>
                             
